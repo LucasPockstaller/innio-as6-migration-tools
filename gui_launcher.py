@@ -118,10 +118,10 @@ class ModernMigrationGUI:
         self.selected_folder.trace_add("write", self.toggle_run_button)
         self.toggle_run_button()
         # After building UI trigger async update check
-        try:
-            threading.Thread(target=self._async_check_updates, daemon=True).start()
-        except Exception:
-            pass
+#        try:
+#            threading.Thread(target=self._async_check_updates, daemon=True).start()
+#        except Exception:
+#            pass
 
     def resource_path(self, rel_path):
         base = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
@@ -1193,12 +1193,12 @@ class ModernMigrationGUI:
         btn_row.pack(side="bottom", fill="x", pady=12, padx=16)
 
         def ignore_version():
-            try:
-                from update_check import set_ignored_version
-
-                set_ignored_version(tag)
-            except Exception:
-                pass
+#            try:
+#                from update_check import set_ignored_version
+#
+#                set_ignored_version(tag)
+#            except Exception:
+#                pass
             win.destroy()
 
         def get_version():
